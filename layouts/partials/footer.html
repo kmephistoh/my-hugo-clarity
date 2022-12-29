@@ -10,6 +10,7 @@
     <img src='{{ absURL (default $defaultFooterLogo $s.footerLogo) }}' class="icon icon_2 transparent" alt="{{ $t }}">
     <p>{{ T "copyright" | markdownify }}{{ with $s.since }}&nbsp;{{ . }}-{{ end }}&nbsp;<span
         class="year"></span>&nbsp;{{ upper $t }}. {{ T "all_rights" | markdownify }}</p>
+    <strong>版权声明</strong>&nbsp;无来源标识的均为原创文章，未经授权请勿转载
     {{- partialCached "top" .}}
   </div>
 </footer>
