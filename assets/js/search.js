@@ -21,10 +21,10 @@ function initializeSearch(index) {
     return minimumQueryLength;
   }
 
-  function searchResults(results=[], query="", passive = false) {
+  function searchResults(results = [], query = "", passive = false) {
     let resultsFragment = new DocumentFragment();
     let showResults = elem('.search_results');
-    if(passive) {
+    if (passive) {
       showResults = searchPageElement;
     }
     emptyEl(showResults);
@@ -32,7 +32,7 @@ function initializeSearch(index) {
     const queryLen = query.length;
     const requiredQueryLen = minQueryLen(query);
 
-    if(results.length && queryLen >= requiredQueryLen) {
+    if (results.length && queryLen >= requiredQueryLen) {
       let resultsTitle = createEl('h3');
       resultsTitle.className = 'search_title';
       resultsTitle.innerText = quickLinks;
@@ -40,23 +40,23 @@ function initializeSearch(index) {
       let goBackButton = createEl('button');
       goBackButton.textContent = 'Go Back';
       goBackButton.className = goBackClass;
-      if(passive) {
+      if (passive) {
         resultsTitle.innerText = searchResultsLabel;
       }
-      if(!searchPageElement) {
-        results = results.slice(0,8);
+      if (!searchPageElement) {
+        results = results.slice(0, 8);
       } else {
         resultsFragment.appendChild(goBackButton);
-        results = results.slice(0,12);
+        results = results.slice(0, 12);
       }
       resultsFragment.appendChild(resultsTitle);
 
-      results.forEach(function(result){
+      results.forEach(function (result) {
         let item = createEl('a');
         item.href = `${result.link}?query=${query}`;
         item.className = 'search_result';
         item.style.order = result.score;
-        if(passive) {
+        if (passive) {
           pushClass(item, 'passive');
           let itemTitle = createEl('h3');
           itemTitle.textContent = result.title;
@@ -74,28 +74,28 @@ function initializeSearch(index) {
       });
     }
 
-    if(queryLen >= requiredQueryLen) {
+    if (queryLen >= requiredQueryLen) {
       if (!results.length) {
         showResults.innerHTML = `<span class="search_result">${noMatchesFound}</span>`;
       }
     } else {
-      showResults.innerHTML = `<label for="find" class="search_result">${ queryLen > 1 ? shortSearchQuery : typeToSearch }</label>`
+      showResults.innerHTML = `<label for="find" class="search_result">${queryLen > 1 ? shortSearchQuery : typeToSearch}</label>`
     }
 
     showResults.appendChild(resultsFragment);
   }
 
   function search(searchTerm, scope = null, passive = false) {
-    if(searchTerm.length) {
+    if (searchTerm.length) {
       let rawResults = index.search(searchTerm);
-      rawResults = rawResults.map(function(result){
+      rawResults = rawResults.map(function (result) {
         const score = result.score;
         const resultItem = result.item;
         resultItem.score = (parseFloat(score) * 50).toFixed(0);
-        return resultItem ;
+        return resultItem;
       })
 
-      if(scope) {
+      if (scope) {
         rawResults = rawResults.filter(resultItem => {
           return resultItem.section == scope;
         });
@@ -113,17 +113,17 @@ function initializeSearch(index) {
 
     if (searchField) {
       const searchScope = searchField.dataset.scope;
-      searchField.addEventListener('input', function() {
+      searchField.addEventListener('input', function () {
         const searchTerm = searchField.value.trim().toLowerCase();
         search(searchTerm, searchScope);
       });
 
-      if(!searchPageElement) {
-        searchField.addEventListener('search', function(){
+      if (!searchPageElement) {
+        searchField.addEventListener('search', function () {
           const searchTerm = searchField.value.trim().toLowerCase();
-          if(searchTerm.length)  {
+          if (searchTerm.length) {
             const scopeParameter = searchScope ? `&scope=${searchScope}` : '';
-            window.location.href = new URL(baseURL + `search/?query=${searchTerm}${ scopeParameter }`).href;
+            window.location.href = new URL(baseURL + `search/?query=${searchTerm}${scopeParameter}`).href;
           }
         });
       }
@@ -131,7 +131,7 @@ function initializeSearch(index) {
   }
 
   function passiveSearch() {
-    if(searchPageElement) {
+    if (searchPageElement) {
       const searchTerm = findQuery();
       const searchScope = findQuery('scope');
       // search actively after search page has loaded
@@ -139,8 +139,8 @@ function initializeSearch(index) {
 
       search(searchTerm, searchScope, true);
 
-      if(searchField) {
-        searchField.addEventListener('input', function() {
+      if (searchField) {
+        searchField.addEventListener('input', function () {
           const searchTerm = searchField.value.trim().toLowerCase();
           search(searchTerm, true);
           wrapText(searchTerm, main);
@@ -151,16 +151,16 @@ function initializeSearch(index) {
 
   function hasSearchResults() {
     const searchResults = elem('.results');
-    if(searchResults) {
-        const body = searchResults.innerHTML.length;
-        return [searchResults, body];
+    if (searchResults) {
+      const body = searchResults.innerHTML.length;
+      return [searchResults, body];
     }
     return false
   }
 
   function clearSearchResults() {
     let searchResults = hasSearchResults();
-    if(searchResults) {
+    if (searchResults) {
       searchResults = searchResults[0];
       searchResults.innerHTML = "";
       // clear search field
@@ -169,16 +169,16 @@ function initializeSearch(index) {
     }
   }
 
-  function onEscape(fn){
-    window.addEventListener('keydown', function(event){
-      if(event.code === "Escape") {
+  function onEscape(fn) {
+    window.addEventListener('keydown', function (event) {
+      if (event.code === "Escape") {
         fn();
       }
     });
   }
 
   let main = elem('main');
-  if(!main) {
+  if (!main) {
     main = elem('.main');
   }
 
@@ -189,10 +189,10 @@ function initializeSearch(index) {
 
   onEscape(clearSearchResults);
 
-  window.addEventListener('click', function(event){
+  window.addEventListener('click', function (event) {
     const target = event.target;
     const isSearch = target.closest(searchClass) || target.matches(searchClass);
-    if(!isSearch && !searchPageElement) {
+    if (!isSearch && !searchPageElement) {
       clearSearchResults();
     }
   });
@@ -200,7 +200,7 @@ function initializeSearch(index) {
 
 function highlightSearchTerms(search, context, wrapper = 'mark', cssClass = '') {
   const query = findQuery()
-  if(query){
+  if (query) {
 
     let container = elem(context);
     let reg = new RegExp("(" + search + ")", "gi");
@@ -227,15 +227,15 @@ function highlightSearchTerms(search, context, wrapper = 'mark', cssClass = '') 
   }
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   const pageLanguage = elem('body').dataset.lang;
-  const searchIndexLangSlug = pageLanguage === 'en' ? '': `${pageLanguage}/`;
+  const searchIndexLangSlug = pageLanguage === 'zh-cn' ? '' : `${pageLanguage}/`;
   const searchIndex = `${searchIndexLangSlug}index.json`;
   fetch(new URL(baseURL + searchIndex).href)
-  .then(response => response.json())
-  .then(function(data) {
-    data = data.length ? data : [];
-    initializeSearch(data);
-  })
-  .catch((error) => console.error(error));
+    .then(response => response.json())
+    .then(function (data) {
+      data = data.length ? data : [];
+      initializeSearch(data);
+    })
+    .catch((error) => console.error(error));
 });
