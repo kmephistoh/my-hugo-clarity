@@ -46,7 +46,7 @@ replacements.
     {{- end -}}
 
     {{/* Render image and attributes. */}}
-    <img loading="lazy" decoding="async" width="150" height="150" alt="{{ htmlEscape $alt }}" {{ with $image }}
+    <img loading="lazy" decoding="async" alt="{{ htmlEscape $alt }}" {{ with $image }}
       class="{{ $classes }} image_processed" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}" {{
       else }} class="{{ $classes }} image_unprocessed" src="{{ $fileWeb }}" {{ end }} {{ with $cap }}
       title="{{ safeHTML $cap }}" {{ end }} />
