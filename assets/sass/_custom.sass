@@ -2,3 +2,18 @@
 // due to the cascading nature of css, if you try to override theme css variables in this file, those changes will not apply. Instead, override css variables in the `override.sass` file
 // we recommend not editing this file directly. Instead, create an `assets/sass/_custom.sass` file at the root level of your site.
 // if you edit this file directly, you will have to resolve git conflicts when and if you decide to pull changes we make on the theme
+
+@keyframes heartbeat
+    0%,100%
+        transform: scale(1)
+
+    10%,30%
+        transform: scale(0.9)
+
+    20%,40%,50%,60%,70%,80%
+        transform: scale(1.1)
+.heart-icon
+    width: 1.05em
+    height: 1em
+    margin: 0 0.25em 0.3em
+    animation: heartbeat 1.33s ease-in-out infinite
