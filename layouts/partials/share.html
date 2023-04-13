@@ -1,8 +1,8 @@
 {{- $s := T "share_on" }}
 <div class="post_share">
   {{ $s }}:
-  <a href="https://service.weibo.com/share/share.php?title={{ .Title }}&url={{ .Permalink }}" class="twitter"
-    title="{{ $s }} Weibo" target="_blank" rel="nofollow">
+  <a href="https://service.weibo.com/share/share.php?title={{ .Title }}&url={{ .Permalink }}&pic={{ absURL .Params.thumbnail }}&appkey="
+    class="twitter" title="{{ $s }} Weibo" target="_blank" rel="nofollow">
     {{ partial "sprite" (dict "icon" "weibo") }}
   </a>
   <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}&tw_p=tweetbutton" class="twitter"
