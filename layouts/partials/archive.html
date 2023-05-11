@@ -12,7 +12,11 @@
 <div class="grid-inverse wrap content">
   <div>
     <ul class="posts" id="posts">
-      {{- range (.Paginate $pages).Pages }}
+      {{- range $pageindex,$pagevalue := (.Paginate $pages).Pages }}
+      {{if and ($pageindex) (modBool $pageindex 3)}}
+      <!-- ads feed -->
+      {{ partial "google/adsense-feed" . }}
+      {{end}}
       {{ partial "excerpt" . }}
       {{- end }}
       <li>
