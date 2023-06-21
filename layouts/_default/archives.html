@@ -18,16 +18,16 @@
             {{ end }}
           {{ end }}
           {{ $.Scratch.Set "count" 1 }}
-          <ul class="article__list">
+          <ol reversed>
             {{ range (where .Pages "Type" $type) }}
               {{ if (ne .Params.hidden true) }}
-                <li>
-                  {{ .Date.Format "2006-01-02" }}
-                  <a href="{{ .RelPermalink }}"> &nbsp {{ .Title }}</a>
+                <li class="article__list">
+                  | {{ .Date.Format "2006-01-02" }} |
+                  <a href="{{ .RelPermalink }}"> {{ .Title }}</a>
                 </li>
               {{ end }}
             {{ end }}
-          </ul>
+          </ol>
         {{ end }}
       {{ end }}
     </div>
