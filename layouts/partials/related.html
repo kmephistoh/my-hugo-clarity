@@ -1,9 +1,11 @@
 {{ $related := .Site.RegularPages.Related . | first 10 }}
 {{ with $related }}
-<h3 class="mb-0">{{ T "series_posts" }}:</h3>
-<ul>
-	{{ range . }}
-	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-	{{ end }}
-</ul>
+  <h3 class="mb-0">{{ T "series_posts" }}:</h3>
+  <ul>
+    {{ range . }}
+      <li class="flex-column">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
 {{ end }}
