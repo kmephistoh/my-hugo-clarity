@@ -54,3 +54,6 @@ other = "{{ .ReadingTime }} 分鐘長"
 
 [series_posts]
 other = "相關文章"
+
+[privacy_policy]
+other = "隱私政策"

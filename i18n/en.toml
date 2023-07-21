@@ -55,6 +55,9 @@ other = "{{ .ReadingTime }} min read"
 [series_posts]
 other = "See Also"
 
+[privacy_policy]
+other = "Privacy Policy"
+
 # search
 [quick_links]
   other = "Results"
