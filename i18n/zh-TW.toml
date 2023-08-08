@@ -57,3 +57,13 @@ other = "相關文章"
 
 [privacy_policy]
 other = "隱私政策"
+
+
+[copyright_statement]
+other = "版權申明"
+
+[copyright_statement_one]
+other = "本站內容全部為原創，未經授權請勿轉載（因轉載後排版往往錯亂、內容不可控、無法持續更新等）;"
+
+[copyright_statement_two]
+other = "非營利為目的，演繹本博客任何內容，請以'原文出處'或者'參考鏈接'等方式給出本站相關網頁地址(方便讀者)。"
