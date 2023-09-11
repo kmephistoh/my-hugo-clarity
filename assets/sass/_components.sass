@@ -285,6 +285,12 @@
     display: block
     margin: 1rem auto
   &_content
+    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.1)
+    padding: 1rem
+    margin-bottom: 3rem
+    margin-top: 2rem
+    border-radius: 0.5rem
+    background: var(--post-bg)
     a:not(.button)
       color: $theme
     ul, ol
@@ -468,7 +474,7 @@
         grid-gap: 1rem
 .sidebar
   &_inner
-    position: relative
+    // position: relative
     &::before
       content: ""
       padding: 0.5px
@@ -479,6 +485,13 @@
       position: absolute
       left: -2rem
         // display: none
+  &_item
+    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.1)
+    padding: 1rem
+    margin-bottom: 3rem
+    margin-top: 2rem
+    border-radius: 0.5rem
+    background: var(--post-bg)
 
 .author
   &_header
