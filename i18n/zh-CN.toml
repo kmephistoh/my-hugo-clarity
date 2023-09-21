@@ -50,7 +50,7 @@ other = "所有专栏"
 other = "文章目录"
 
 [reading_time]
-other = "{{ .ReadingTime }} min read"
+other = "{{ .ReadingTime }} 分钟"
 
 [series_posts]
 other = "相关文章"
