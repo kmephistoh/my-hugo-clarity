@@ -5,14 +5,14 @@
 <html
   lang="{{ .Lang }}"
   data-figures="{{ $p.figurePositionShow }}"
-  {{ if .IsPage }}
+  {{- if .IsPage }}
     class="page"
-  {{ else if .IsHome }}
+  {{- else if .IsHome }}
     class="home"
-  {{ end }}
+  {{ end -}}
   {{ with $s.enforceLightMode }}
     data-mode="lit"
-  {{ end }}
+  {{ end -}}
   {{ with $s.enforceDarkMode }}
     data-mode="dim"
   {{ end -}}
