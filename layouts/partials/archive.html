@@ -15,7 +15,7 @@
       {{- range $pageindex,$pagevalue := (.Paginate $pages).Pages }}
         {{ if and ($pageindex) (modBool $pageindex 5) }}
           <!-- ads feed -->
-          {{ partial "google/adsense-feed" . }}
+          {{/* {{ partial "google/adsense-feed" . }} */}}
         {{ end }}
         {{ partial "excerpt" . }}
       {{- end }}
