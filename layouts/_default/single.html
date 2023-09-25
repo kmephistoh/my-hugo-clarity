@@ -29,6 +29,10 @@
       {{- .Content }}
     </div>
 
+    <div class="last_mod">
+       {{ T "lastmod_msg" | markdownify }} {{ .Lastmod.Format "Monday, January 2, 2006" }}
+    </div>
+
     {{- partial "copyright" . }}
 
     {{- $showRelatedInArticle := true }}

@@ -82,3 +82,6 @@ other = "For non-profit purposes, to deduce any content of this blog, please giv
   other = "Query is too short"
 [type_to_search]
   other = "Type to search"
+
+[lastmod_msg]
+other = "Lastmod："
