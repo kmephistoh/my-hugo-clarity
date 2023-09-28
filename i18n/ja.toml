@@ -70,3 +70,18 @@ other = "このシリーズの投稿"
   other = "検索文字列が短すぎます"
 [type_to_search]
   other = "入力して検索"
+
+[privacy_policy]
+other = "プライバシーポリシー"
+
+[copyright_statement]
+other = "著作権に関する声明"
+
+[copyright_statement_one]
+other = "このサイトの内容はすべてオリジナルですので、無断転載はご遠慮ください（転載後にレイアウトが崩れたり、内容が制御不能になったり、継続的に更新できない等の理由から）。"
+
+[copyright_statement_two]
+other = "このブログのコンテンツを非営利目的で解釈したい場合は、(読者の便宜のため)「オリジナル ソース」または「参照リンク」の形式でこのサイトの関連 Web ページ アドレスを提供してください。"
+
+[lastmod_msg]
+other = "最終更新日: "
