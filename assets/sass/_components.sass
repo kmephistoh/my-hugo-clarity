@@ -9,6 +9,12 @@
   color: $haze
   display: flex
   justify-content: space-between
+  background-color: $bg
+  padding: 0 1.5rem
+  position: relative
+  width: 100%
+  z-index: 999999
+  left: 0
   @include content
   &_active
     background-color: rgba($light, 0.05)
@@ -22,13 +28,13 @@
   &_body
     display: flex
     flex: 1
-  &_header
-    background-color: $bg
-    padding: 0 1.5rem
-    position: relative
-    width: 100%
-    z-index: 999999
-    left: 0
+  // &_header
+    // background-color: $bg
+    // padding: 0 1.5rem
+    // position: relative
+    // width: 100%
+    // z-index: 999999
+    // left: 0
   &_item
     padding: 0.5rem 1rem
     display: inline-flex
