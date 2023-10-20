@@ -70,3 +70,20 @@ other = "Publicaciones en esta serie"
   other = "La consulta es demasiado corta"
 [type_to_search]
   other = "Escriba para buscar"
+
+
+[privacy_policy]
+other = "política de privacidad"
+
+[copyright_statement]
+other = "Declaración de derechos de autor"
+
+[copyright_statement_one]
+other = "Todo el contenido de este sitio es original, no lo reimprima sin autorización (porque el diseño a menudo se estropea después de la reimpresión, el contenido es incontrolable y no se puede actualizar continuamente, etc.);"
+
+[copyright_statement_two]
+other = "Si desea interpretar cualquier contenido de este blog con fines sin fines de lucro, proporcione la dirección de la página web correspondiente de este sitio en forma de 'fuente original' o 'enlace de referencia' (para comodidad de los lectores)."
+
+
+[lastmod_msg]
+other = "Última modificación el:"
