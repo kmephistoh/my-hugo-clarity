@@ -108,6 +108,7 @@
     <div class="sidebar_item">
       {{- $tagsLimit := (default 100 $s.numberOfTagsShown) }}
       {{- range $key, $value := .Site.Taxonomies }}
+        {{/* {{- if and (gt $value 0) (lt $value 20) }} */}}
         {{- if gt $value 0 }}
           <div>
             <h1 class="mt-4 taxonomy" id="{{ $key }}-section">{{ T $key }}</h1>
@@ -124,7 +125,7 @@
                   <span class="button_tally">{{ .Count }}</span>
                 </a>
               {{ end }}
-              {{ if gt (len $value.ByCount) $tagsLimit }}
+              {{/*  {{ if gt (len $value.ByCount) $tagsLimit }}
                 <br />
                 <div class="post_tags_toggle button">
                   {{ T (printf "all_%s" (lower $key)) }}
@@ -154,7 +155,7 @@
                     ></span>
                   </div>
                 </div>
-              {{- end }}
+              {{- end }}  */}}
             </nav>
           </div>
         {{- end }}
