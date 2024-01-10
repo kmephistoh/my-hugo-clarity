@@ -33,6 +33,7 @@
        {{ T "lastmod_msg" | markdownify }} {{ .Lastmod.Format "Monday, January 2, 2006" }}
     </div>
 
+    {{- partial "wechat" . }}
     {{- partial "copyright" . }}
 
     {{- $showRelatedInArticle := true }}
