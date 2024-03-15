@@ -1,5 +1,65 @@
 {{ define "main" }}
   <section class="wrap content" style="padding: 0!important">
+    {{ $s := site.Params }}
+    <div class="sidebar_item">
+      {{- $tagsLimit := (default 100 $s.numberOfTagsShown) }}
+      {{- range $key, $value := .Site.Taxonomies }}
+        {{/* {{- if and (gt $value 0) (lt $value 20) }} */}}
+        {{- if gt $value 0 }}
+          <div>
+            <h1 class="mt-4 taxonomy" id="{{ $key }}-section">{{ T $key }}</h1>
+            <nav class="tags_nav">
+              {{- $onPageTags := $.Page.Params.tags }}
+              {{- $slicedTags := ($value.ByCount | first $tagsLimit) }}
+              {{- range $slicedTags }}
+                <a
+                  href="{{ absLangURL $key }}/{{ (replace .Name "#" "%23") | urlize }}/"
+                  class="post_tag button button_translucent"
+                  title="{{ .Name }}"
+                >
+                  {{ upper .Name }}
+                  <span class="button_tally">{{ .Count }}</span>
+                </a>
+              {{ end }}
+              {{ if gt (len $value.ByCount) $tagsLimit }}
+                <br />
+                <div class="post_tags_toggle button">
+                  {{ T (printf "all_%s" (lower $key)) }}
+                </div>
+                {{- $tagsInfo := newScratch }}
+                <div class="post_tags">
+                  <div class="tags_list">
+                    {{- range $value.Alphabetical }}
+                      {{ $tagsInfo.Add "tagsInfo" (slice .Name .Count) }}
+                      <a
+                        href="{{ absLangURL $key }}/{{ (replace .Name "#" "%23") | urlize }}/"
+                        class=" post_tag button button_translucent"
+                        data-position="{{ .Count }}"
+                        title="{{ .Name }}"
+                      >
+                        {{- upper .Name -}}
+                        <span class="button_tally">{{ .Count }}</span>
+                      </a>
+                    {{ end }}
+                    <div class="tags_sort">
+                      <span title="sort alphabetically">[A~Z]</span
+                      ><span title="sort by count">[0~9]</span>
+                    </div>
+                    <span class="tags_hide"
+                      ><svg class="icon">
+                        <use xlink:href="#closeme"></use></svg
+                    ></span>
+                  </div>
+                </div>
+              {{- end }}
+            </nav>
+          </div>
+        {{- end }}
+      {{- end }}
+    </div>
+  </section>
+
+  <section class="wrap content" style="padding: 0!important">
     <div class="post_content">
       {{ $type := .Type }}
       {{ $.Scratch.Set "count" 1 }}
