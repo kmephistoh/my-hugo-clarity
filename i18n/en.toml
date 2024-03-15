@@ -62,7 +62,7 @@ other = "Privacy Policy"
 other = "Copyright statement"
 
 [copyright_statement_one]
-other = "All content on this site is original, please do not reprint without authorization (because the typesetting is often disordered after reprinting, the content is uncontrollable, and cannot be continuously updated, etc.);"
+other = "All content that is not sourced is original., please do not reprint without authorization (because the typesetting is often disordered after reprinting, the content is uncontrollable, and cannot be continuously updated, etc.);"
 
 [copyright_statement_two]
 other = "For non-profit purposes, to deduce any content of this blog, please give the relevant webpage address of this site in the form of 'source of original text' or 'reference link' (for the convenience of readers)."
