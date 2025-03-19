@@ -81,7 +81,7 @@
           <ol reversed>
             {{ range (where .Pages "Type" $type) }}
               {{ if (ne .Params.hidden true) }}
-                <li class="article__list">
+                <li class="article-list">
                   | {{ .Date.Format "2006-01-02" }} |
                   <a href="{{ .RelPermalink }}"> {{ .Title }}</a>
                 </li>
