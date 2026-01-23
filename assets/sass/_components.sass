@@ -28,6 +28,7 @@
   &_body
     display: flex
     flex: 1
+    font-size: 1.2rem
   // &_header
     // background-color: $bg
     // padding: 0 1.5rem
@@ -523,9 +524,9 @@
       background-color: darken($theme, 20%)
   &-link
     padding: 0.25rem 0.75rem
-    background-color: $theme
+    background-color: var(--nav-bg)
     color: $light
-    // border-radius: 1rem
+    border-radius: 0.5rem
   &_only
     display: none !important
   & &_only
@@ -585,7 +586,6 @@ figcaption
     z-index: 99
     &.ios
       position: absolute
-      bottom: 0.75rem
       right: 0
     &:hover
       background-color: #5271c0
