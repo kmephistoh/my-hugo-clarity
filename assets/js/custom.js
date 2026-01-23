@@ -1,14 +1,25 @@
 // add custom js in this file
 
 window.onscroll = function () {
-  var pageOffset =
-    document.documentElement.scrollTop || document.body.scrollTop;
+  var pageOffset = document.documentElement.scrollTop || document.body.scrollTop;
+  var toTopBtn = document.getElementById("toTop"); // 提前获取元素，避免重复查询
+  
   if (pageOffset > 1000) {
-    document.getElementById("toTop").style.visibility = "visible";
+    // 显示：添加show类，触发过渡动画
+    toTopBtn.classList.add("show");
   } else {
-    document.getElementById("toTop").style.visibility = "hidden";
+    // 隐藏：移除show类，触发过渡动画
+    toTopBtn.classList.remove("show");
   }
 };
+
+// 可选：添加点击回到顶部的平滑滚动（提升体验）
+document.getElementById("toTop").addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
 // 去除广告拦截检测，没什么意义
 // function detectAdblock() {

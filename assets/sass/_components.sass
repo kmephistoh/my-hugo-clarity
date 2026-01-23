@@ -567,7 +567,10 @@ figcaption
 
 .to
   &_top
+    pointer-events: none // 隐藏时不响应点击
     visibility: hidden
+    transform: scale(0)
+    transition: visibility 0.35s, transform 0.35s
     background-color: transparent
     width: 2.75rem
     height: 2.75rem
@@ -592,6 +595,11 @@ figcaption
       transition: 0.3s opacity var(--ease)
     &:hover svg
       opacity: 1
+    // 显示状态的样式（通过JS控制）
+    &.show
+      pointer-events: auto // 显示时响应点击
+      visibility: visible
+      transform: scale(1) // 缩放到1，正常显示
 
 .color
   &_mode
