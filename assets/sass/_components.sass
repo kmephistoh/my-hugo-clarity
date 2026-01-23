@@ -10,7 +10,7 @@
   display: flex
   justify-content: space-between
   background-color: var(--nav-bg)
-  padding: 0 1.5rem
+  // padding: 0 1.5rem
   position: relative
   width: 100%
   z-index: 999999
@@ -29,13 +29,13 @@
     display: flex
     flex: 1
     font-size: 1.2rem
-  // &_header
-    // background-color: $bg
+  &_header
+    background-color:  var(--nav-bg)
     // padding: 0 1.5rem
-    // position: relative
-    // width: 100%
-    // z-index: 999999
-    // left: 0
+    position: relative
+    width: 100%
+    z-index: 999999
+    left: 0
   &_item
     padding: 0.5rem 1rem
     display: inline-flex
@@ -158,12 +158,13 @@
 
 .footer
   // border-top: 1px solid $xhaze
-  background: var(--footer-bg)
+  background: var(--nav-bg)
   margin-top: 2rem
   font-size: 0.9rem
   padding: 0.4rem 0
   &_inner
     @include content
+    color: #fafafa
     display: grid
     grid-template-columns: 4rem 1fr
     align-items: center
