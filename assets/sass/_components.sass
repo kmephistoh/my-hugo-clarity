@@ -9,7 +9,7 @@
   color: $haze
   display: flex
   justify-content: space-between
-  background-color: var(--nav-bg)
+  background-color: var(--theme)
   // padding: 0 1.5rem
   position: relative
   width: 100%
@@ -30,7 +30,7 @@
     flex: 1
     font-size: 1.2rem
   &_header
-    background-color:  var(--nav-bg)
+    background-color:  var(--theme)
     // padding: 0 1.5rem
     position: relative
     width: 100%
@@ -160,7 +160,7 @@
 
 .footer
   // border-top: 1px solid $xhaze
-  background: var(--nav-bg)
+  background: var(--theme)
   margin-top: 2rem
   font-size: 0.9rem
   padding: 0.4rem 0
@@ -173,12 +173,12 @@
     position: relative
 
 .button
-  background-color: $theme
+  background-color: var(--theme)
   color: $light
   display: inline-flex
   padding: 0.5rem 1.5rem
   text-transform: uppercase
-  border: 1px solid $theme
+  border: 1px solid var(--theme)
   border-radius: 1.5rem
   font-size: 0.9rem
   align-items: center
@@ -188,25 +188,25 @@
     outline: none
     border: none
     appearance: none
-    background-color: $theme
+    background-color: var(--theme)
     font-size: 1rem
     cursor: pointer
     padding: 0.5rem 1rem
     margin-bottom: 1.33rem
     border-radius: 1.5rem
   &:hover, &:focus
-    background-color: darken($theme, 20%)
+    background-color: var(--theme-hover)
     color: $light
-    border: 1px solid darken($theme, 20%)
+    border: 1px solid var(--theme-hover)
 
   &_translucent
     background-color: $tag
-    color: $theme
+    color: var(--theme)
     border: 1px solid transparent
   &_tally
     padding: 0 0.75rem
     border-radius: 0.5rem
-    background-color: $theme
+    background-color: var(--theme)
     display: inline-flex
     justify-content: center
     align-items: center
@@ -303,7 +303,7 @@
     border-radius: 0.5rem
     background: var(--post-bg)
     // a:not(.button)
-    //   color: $theme
+    //   color: var(--theme)
     ul, ol
       list-style: initial
       padding: 0.5rem 1.25rem
@@ -326,7 +326,7 @@
     right: 1.5rem
     height: 2.25rem
     width: 2.25rem
-    background-color: $theme
+    background-color: var(--theme)
     display: flex
     align-items: center
     justify-content: center
@@ -433,7 +433,7 @@
   position: relative
   &_owner
     padding-left: 0.5rem
-    border-left: 0.6rem solid $theme
+    border-left: 0.6rem solid var(--theme)
     margin: 1rem 0
     .icon
       background-image: url('#{$iconsPath}link.svg')
@@ -446,7 +446,7 @@
       position: absolute
       right: -1rem
       top: -2rem
-      background-color: $theme
+      background-color: var(--theme)
       color: $light
       width: 7rem
       padding: 0.25rem 0.5rem
@@ -457,7 +457,7 @@
         position: absolute
         top: 1rem
         content: ""
-        border-color: $theme transparent
+        border-color: var(--theme) transparent
         border-style: solid
         border-width: 1rem 1rem 0 1rem
         height: 0
@@ -511,7 +511,7 @@
     grid-gap: 1rem
   &_bio
     a
-      color: $theme
+      color: var(--theme)
 
 .pagination
   display: flex
@@ -524,10 +524,10 @@
     &:first-child, &:last-child
       display: none
     &.active a
-      background-color: darken($theme, 20%)
+      background-color: var(--theme-hover)
   &-link
     padding: 0.25rem 0.75rem
-    background-color: var(--nav-bg)
+    background-color: var(--theme)
     color: $light
     border-radius: 0.5rem
   &_only
@@ -575,7 +575,7 @@ figcaption
     visibility: hidden
     transform: scale(0)
     transition: visibility 0.35s, transform 0.35s
-    background-color: #00A960
+    background-color: var(--theme)
     width: 2.75rem
     height: 2.75rem
     display: flex
@@ -591,7 +591,7 @@ figcaption
       position: absolute
       right: 0
     &:hover
-      background-color: #5271c0
+      background-color: #81D8D0
     svg
       fill: $light
       opacity: 0.5
@@ -787,7 +787,7 @@ figcaption
         display: none
   &_title
     padding: 0.25rem 1rem !important
-    background-color: $theme
+    background-color: var(--theme)
     color: var(--light)
     margin: 0
     font-size: 1.25rem

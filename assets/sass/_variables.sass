@@ -1,8 +1,11 @@
 $light: #fff
 $haze: #fafafa
 $xhaze: darken($haze, 11%)
-$bg: #00356B
-$theme: #00356B
+$bg: #01847F
+$light-theme: #01847F
+$light-theme-hover: darken($light-theme, 20%);
+$dark-theme: #1F1F1F
+$dark-theme-hover: lighten($dark-theme, 15%);
 $tag: #D4D4D4
 $mobile-menu-breakpoint: 769px
 $single-column-breakpoint: 42rem
@@ -28,14 +31,14 @@ html
   --light: #fff
   --dark: #000
   --bg: rgba(27,31,35,0.9)
-  --nav-bg: #00356B
+  --theme: #{$light-theme}
+  --theme-hover: #{$light-theme-hover}
   --haze: #e2e2e2
   --gray: #020202
   --accent: var(--gray)
   --text: #575757
   --header-text: var(--dark)
   --font: myfonts
-  --theme: var(--theme)
   --ease: cubic-bezier(.19,1,.22,1)
   --code-bg: var(--bg)
   --table-bg: var(--light)
@@ -68,7 +71,8 @@ html
     --color-mode: 'dim'
     --text: var(--light)
     --accent: var(--bubble)
-    --nav-bg: #2e2d2d
+    --theme: #{$dark-theme}
+    --theme-hover: #{$dark-theme-hover}
     --choice-bg: var(--bg)
     --code-bg: var(--translucent-light)
     --header-text: var(--light)
