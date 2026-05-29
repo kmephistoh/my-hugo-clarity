@@ -10,7 +10,7 @@
     {{- end }}
     <div class='nav_body nav_body_{{ default "left" $params.mobileNavigation }}'>
       {{ $context := . }}
-      {{ $menuData := .Site.Data.menu }}
+      {{ $menuData := hugo.Data.menu }}
       {{ with $menuData }}
         {{ partial "nav" (dict "context" $context "menu" $menuData) }}
       {{- else }}
@@ -22,7 +22,7 @@
         <div class="nav_sub">
           <span class="nav_child"></span>
           {{ range .Site.Home.AllTranslations }}
-          <a href="{{ .Permalink }}" class="nav_child nav_item">{{ .Language.LanguageName }}</a>
+          <a href="{{ .Permalink }}" class="nav_child nav_item">{{ .Language.Label }}</a>
           {{ end }}
         </div>
       </div>
